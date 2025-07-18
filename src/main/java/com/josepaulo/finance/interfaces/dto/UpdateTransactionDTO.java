@@ -1,6 +1,7 @@
 package com.josepaulo.finance.interfaces.dto;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 import lombok.Data;
 
@@ -8,5 +9,7 @@ import lombok.Data;
 public class UpdateTransactionDTO {
     private String description;
     private BigDecimal value;
-    private String type; // "INCOME" ou "EXPENSE"
+    private String type;
+    private UUID categoryId;
+
 }

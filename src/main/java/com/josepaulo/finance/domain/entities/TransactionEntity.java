@@ -45,5 +45,7 @@ public class TransactionEntity {
     @JoinColumn(name = "user_id")
     private UserEntity user;
 
-    // A category será adicionada depois
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private CategoryEntity category;
 }
