@@ -14,4 +14,7 @@ public interface ICategoryRepository {
     Optional<CategoryEntity> findByName(String name);
 
     List<CategoryEntity> findAll();
+
+    void delete(CategoryEntity category);
+
 }

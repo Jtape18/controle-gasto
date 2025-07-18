@@ -36,4 +36,9 @@ public class CategoryRepositoryImpl implements ICategoryRepository {
     public List<CategoryEntity> findAll() {
         return jpaRepository.findAll();
     }
+
+    @Override
+    public void delete(CategoryEntity category) {
+        jpaRepository.delete(category);
+    }
 }
