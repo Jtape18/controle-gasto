@@ -1,5 +1,6 @@
 package com.josepaulo.finance.infra.database.repositories;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -17,6 +18,7 @@ import lombok.RequiredArgsConstructor;
 public class TransactionRepositoryImpl implements ITransactionRepository {
 
     private final JpaTransactionRepository jpaRepository;
+    private final JpaTransactionRepository transactionJpaRepository;
 
     @Override
     public TransactionEntity save(TransactionEntity transaction) {
@@ -37,4 +39,10 @@ public class TransactionRepositoryImpl implements ITransactionRepository {
     public List<TransactionEntity> findByUser(UserEntity user) {
         return jpaRepository.findByUser(user);
     }
+
+    @Override
+    public List<TransactionEntity> findByUserAndDateBetween(UserEntity user, LocalDateTime start, LocalDateTime end) {
+        return transactionJpaRepository.findByUserAndDateBetween(user, start, end);
+    }
+
 }

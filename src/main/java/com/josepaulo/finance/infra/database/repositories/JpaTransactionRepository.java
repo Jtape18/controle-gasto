@@ -1,5 +1,6 @@
 package com.josepaulo.finance.infra.database.repositories;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -10,4 +11,7 @@ import com.josepaulo.finance.domain.entities.UserEntity;
 
 public interface JpaTransactionRepository extends JpaRepository<TransactionEntity, UUID> {
     List<TransactionEntity> findByUser(UserEntity user);
+
+    List<TransactionEntity> findByUserAndDateBetween(UserEntity user, LocalDateTime start, LocalDateTime end);
+
 }

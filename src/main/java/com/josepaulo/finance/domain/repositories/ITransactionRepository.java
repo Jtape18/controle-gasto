@@ -1,5 +1,6 @@
 package com.josepaulo.finance.domain.repositories;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -15,5 +16,7 @@ public interface ITransactionRepository {
     void delete(UUID id);
 
     List<TransactionEntity> findByUser(UserEntity user);
+
+    List<TransactionEntity> findByUserAndDateBetween(UserEntity user, LocalDateTime start, LocalDateTime end);
 
 }
