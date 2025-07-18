@@ -1,6 +1,7 @@
 package com.josepaulo.finance.infra.database.repositories;
 
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.stereotype.Repository;
 
@@ -18,6 +19,11 @@ public class UserRepositoryImpl implements IUserRepository {
     @Override
     public Optional<UserEntity> findByWhatsappNumber(String whatsappNumber) {
         return jpaRepository.findByWhatsappNumber(whatsappNumber);
+    }
+
+    @Override
+    public Optional<UserEntity> findById(UUID id) {
+        return jpaRepository.findById(id);
     }
 
     @Override
