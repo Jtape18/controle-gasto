@@ -1,4 +1,4 @@
-package com.josepaulo.finance.application.useCases;
+package com.josepaulo.finance.application.useCases.transaction;
 
 import java.util.UUID;
 

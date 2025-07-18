@@ -25,4 +25,9 @@ public class TransactionRepositoryImpl implements ITransactionRepository {
     public Optional<TransactionEntity> findById(UUID id) {
         return jpaRepository.findById(id);
     }
+
+    @Override
+    public void delete(UUID id) {
+        jpaRepository.deleteById(id);
+    }
 }

@@ -9,4 +9,7 @@ public interface ITransactionRepository {
     TransactionEntity save(TransactionEntity transaction);
 
     Optional<TransactionEntity> findById(UUID id);
+
+    void delete(UUID id);
+
 }
