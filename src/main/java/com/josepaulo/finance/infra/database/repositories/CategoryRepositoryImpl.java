@@ -1,5 +1,6 @@
 package com.josepaulo.finance.infra.database.repositories;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -29,5 +30,10 @@ public class CategoryRepositoryImpl implements ICategoryRepository {
     @Override
     public Optional<CategoryEntity> findByName(String name) {
         return jpaRepository.findByName(name);
+    }
+
+    @Override
+    public List<CategoryEntity> findAll() {
+        return jpaRepository.findAll();
     }
 }

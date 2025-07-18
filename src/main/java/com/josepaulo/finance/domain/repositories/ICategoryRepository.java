@@ -1,5 +1,6 @@
 package com.josepaulo.finance.domain.repositories;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -11,4 +12,6 @@ public interface ICategoryRepository {
     CategoryEntity save(CategoryEntity category);
 
     Optional<CategoryEntity> findByName(String name);
+
+    List<CategoryEntity> findAll();
 }
