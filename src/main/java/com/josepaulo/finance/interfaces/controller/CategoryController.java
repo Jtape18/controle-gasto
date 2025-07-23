@@ -22,11 +22,13 @@ import com.josepaulo.finance.domain.entities.CategoryEntity;
 import com.josepaulo.finance.interfaces.dto.CreateCategoryDTO;
 import com.josepaulo.finance.interfaces.dto.UpdateCategoryDTO;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/categories")
 @RequiredArgsConstructor
+@Tag(name = "Categories", description = "Endpoints for managing transaction categories")
 public class CategoryController {
 
     private final CreateCategoryUseCase createCategoryUseCase;

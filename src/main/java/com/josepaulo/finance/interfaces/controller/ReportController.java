@@ -18,11 +18,13 @@ import com.josepaulo.finance.interfaces.dto.CategorySummaryResponse;
 import com.josepaulo.finance.interfaces.dto.CurrentMonthSummaryResponse;
 import com.josepaulo.finance.interfaces.dto.PeriodReportResponse;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/report")
 @RequiredArgsConstructor
+@Tag(name = "Reports", description = "Endpoints for generating financial reports")
 public class ReportController {
 
     private final GetCategorySummaryUseCase getCategorySummaryUseCase;

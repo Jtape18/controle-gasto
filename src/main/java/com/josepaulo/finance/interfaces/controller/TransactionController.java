@@ -22,11 +22,13 @@ import com.josepaulo.finance.domain.entities.TransactionEntity;
 import com.josepaulo.finance.interfaces.dto.CreateTransactionDTO;
 import com.josepaulo.finance.interfaces.dto.UpdateTransactionDTO;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/transactions")
 @RequiredArgsConstructor
+@Tag(name = "Transactions", description = "Endpoints for managing financial transactions")
 public class TransactionController {
 
     private final CreateTransactionUseCase createTransactionUseCase;

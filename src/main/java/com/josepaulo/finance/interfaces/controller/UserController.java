@@ -10,11 +10,13 @@ import com.josepaulo.finance.application.useCases.CreateUserUseCase;
 import com.josepaulo.finance.domain.entities.UserEntity;
 import com.josepaulo.finance.interfaces.dto.CreateUserDTO;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
+@Tag(name = "Users", description = "Endpoints for managing users")
 public class UserController {
 
     private final CreateUserUseCase createUserUseCase;
