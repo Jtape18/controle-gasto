@@ -22,6 +22,7 @@ import com.josepaulo.finance.domain.entities.TransactionEntity;
 import com.josepaulo.finance.interfaces.dto.CreateTransactionDTO;
 import com.josepaulo.finance.interfaces.dto.UpdateTransactionDTO;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
@@ -29,6 +30,7 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/transactions")
 @RequiredArgsConstructor
 @Tag(name = "Transactions", description = "Endpoints for managing financial transactions")
+@SecurityRequirement(name = "Bearer Authentication")
 public class TransactionController {
 
     private final CreateTransactionUseCase createTransactionUseCase;

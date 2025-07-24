@@ -8,10 +8,12 @@ import com.josepaulo.finance.domain.repositories.IUserRepository;
 import com.josepaulo.finance.infra.security.JwtService;
 import com.josepaulo.finance.interfaces.dto.auth.RegisterRequestDTO;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
+@Schema(description = "Use case for registering a new user")
 public class RegisterUserUseCase {
 
     private final IUserRepository userRepository;

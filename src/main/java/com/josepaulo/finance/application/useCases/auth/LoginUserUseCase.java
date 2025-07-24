@@ -7,10 +7,12 @@ import com.josepaulo.finance.domain.repositories.IUserRepository;
 import com.josepaulo.finance.infra.security.JwtService;
 import com.josepaulo.finance.interfaces.dto.auth.LoginRequestDTO;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
+@Schema(description = "Use case for logging in a user")
 public class LoginUserUseCase {
 
     private final IUserRepository userRepository;

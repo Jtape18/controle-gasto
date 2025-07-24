@@ -13,9 +13,11 @@ import org.springframework.stereotype.Service;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.annotation.PostConstruct;
 
 @Service
+@Schema(description = "Service for handling JWT operations")
 public class JwtService {
 
     @Value("${security.jwt.secret}")

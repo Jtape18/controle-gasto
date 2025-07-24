@@ -10,6 +10,7 @@ import com.josepaulo.finance.application.useCases.CreateUserUseCase;
 import com.josepaulo.finance.domain.entities.UserEntity;
 import com.josepaulo.finance.interfaces.dto.CreateUserDTO;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
@@ -17,6 +18,7 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/users")
 @RequiredArgsConstructor
 @Tag(name = "Users", description = "Endpoints for managing users")
+@SecurityRequirement(name = "Bearer Authentication")
 public class UserController {
 
     private final CreateUserUseCase createUserUseCase;

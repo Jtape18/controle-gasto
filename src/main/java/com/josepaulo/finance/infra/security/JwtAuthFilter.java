@@ -12,6 +12,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import com.josepaulo.finance.domain.entities.UserEntity;
 import com.josepaulo.finance.domain.repositories.IUserRepository;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -20,6 +21,7 @@ import lombok.RequiredArgsConstructor;
 
 @Component
 @RequiredArgsConstructor
+@Schema(description = "Filter for JWT authentication")
 public class JwtAuthFilter extends OncePerRequestFilter {
 
     private final JwtService jwtService;

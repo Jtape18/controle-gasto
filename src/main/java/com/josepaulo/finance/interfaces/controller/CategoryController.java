@@ -22,6 +22,7 @@ import com.josepaulo.finance.domain.entities.CategoryEntity;
 import com.josepaulo.finance.interfaces.dto.CreateCategoryDTO;
 import com.josepaulo.finance.interfaces.dto.UpdateCategoryDTO;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
@@ -29,6 +30,7 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/categories")
 @RequiredArgsConstructor
 @Tag(name = "Categories", description = "Endpoints for managing transaction categories")
+@SecurityRequirement(name = "Bearer Authentication")
 public class CategoryController {
 
     private final CreateCategoryUseCase createCategoryUseCase;

@@ -12,12 +12,14 @@ import com.josepaulo.finance.interfaces.dto.auth.AuthResponseDTO;
 import com.josepaulo.finance.interfaces.dto.auth.LoginRequestDTO;
 import com.josepaulo.finance.interfaces.dto.auth.RegisterRequestDTO;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/auth")
 @RequiredArgsConstructor
+@Tag(name = "Auth", description = "Authentication and authorization endpoints")
 public class AuthController {
 
     private final RegisterUserUseCase registerUserUseCase;

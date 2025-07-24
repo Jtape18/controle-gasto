@@ -18,6 +18,7 @@ import com.josepaulo.finance.interfaces.dto.CategorySummaryResponse;
 import com.josepaulo.finance.interfaces.dto.CurrentMonthSummaryResponse;
 import com.josepaulo.finance.interfaces.dto.PeriodReportResponse;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
@@ -25,6 +26,7 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/report")
 @RequiredArgsConstructor
 @Tag(name = "Reports", description = "Endpoints for generating financial reports")
+@SecurityRequirement(name = "Bearer Authentication")
 public class ReportController {
 
     private final GetCategorySummaryUseCase getCategorySummaryUseCase;

@@ -14,11 +14,13 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.josepaulo.finance.infra.security.JwtAuthFilter;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.RequiredArgsConstructor;
 
 @Configuration
 @RequiredArgsConstructor
 @EnableMethodSecurity
+@Schema(description = "Security configuration for the application")
 public class SecurityConfig {
 
     private final JwtAuthFilter jwtAuthFilter;
@@ -29,7 +31,11 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**").permitAll()
+                        .requestMatchers("/auth/**",
+                                "/v3/api-docs/**",
+                                "/swagger-ui/**",
+                                "/swagger-ui.html")
+                        .permitAll()
                         .anyRequest().authenticated())
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
