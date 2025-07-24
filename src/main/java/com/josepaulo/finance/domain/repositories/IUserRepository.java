@@ -6,9 +6,9 @@ import java.util.UUID;
 import com.josepaulo.finance.domain.entities.UserEntity;
 
 public interface IUserRepository {
+    UserEntity save(UserEntity user);
+
     Optional<UserEntity> findByWhatsappNumber(String whatsappNumber);
 
     Optional<UserEntity> findById(UUID id);
-
-    UserEntity save(UserEntity user);
 }

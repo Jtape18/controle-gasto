@@ -14,20 +14,21 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class UserRepositoryImpl implements IUserRepository {
 
-    private final UserJpaRepository jpaRepository;
+    private final UserJpaRepository userJpaRepository;
+
+    @Override
+    public UserEntity save(UserEntity user) {
+        return userJpaRepository.saveAndFlush(user);
+
+    }
 
     @Override
     public Optional<UserEntity> findByWhatsappNumber(String whatsappNumber) {
-        return jpaRepository.findByWhatsappNumber(whatsappNumber);
+        return userJpaRepository.findByWhatsappNumber(whatsappNumber);
     }
 
     @Override
     public Optional<UserEntity> findById(UUID id) {
-        return jpaRepository.findById(id);
-    }
-
-    @Override
-    public UserEntity save(UserEntity user) {
-        return jpaRepository.save(user);
+        return userJpaRepository.findById(id);
     }
 }

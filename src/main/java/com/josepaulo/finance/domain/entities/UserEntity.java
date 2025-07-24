@@ -32,4 +32,6 @@ public class UserEntity {
     @Column(unique = true, nullable = false)
     private String whatsappNumber;
 
+    @Column(nullable = false)
+    private String password;
 }
